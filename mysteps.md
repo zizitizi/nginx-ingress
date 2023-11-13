@@ -8,35 +8,60 @@ Duration:240 min
 
 
 
-Step 1 - Install NGINX Ingress Controller using Helm
+# Step 1 - Install NGINX Ingress Controller using Helm
 
-Fist verify your cluster is ready:
-kubectl get nodes
- 
+***Fist verify your cluster is ready:***
+
+
+   kubectl get nodes
+
+ ![image](https://github.com/zizitizi/nginx-ingress/assets/123273835/550855b1-77b2-4636-9d6b-a09c7fbf77d0)
+
+
 
 To install an NGINX Ingress controller using Helm, add the nginx-stable repository to helm, then run helm repo update . After we have added the repository we can deploy using the chart nginx-stable/nginx-ingress.
 
+   
+   helm repo add nginx-stable https://helm.nginx.com/stable
+   helm repo update
 
-helm repo add nginx-stable https://helm.nginx.com/stable
-helm repo update
- 
-helm install infra-nginx-ingress-trial nginx-stable/nginx-ingress --set rbac.create=true
+
+
+
+![image](https://github.com/zizitizi/nginx-ingress/assets/123273835/238548a7-1db1-4cb0-9c32-8f7d03bcb441)
+
+
+
+
+   helm install infra-nginx-ingress-trial nginx-stable/nginx-ingress --set rbac.create=true
  
 
-Step 2 - Validate that NGINX is Running
+![image](https://github.com/zizitizi/nginx-ingress/assets/123273835/55bfd0b6-16e8-47c7-bcab-5e084fa21512)
+
+
+# Step 2 - Validate that NGINX is Running
 
 
 to verify it:
 
-kubectl get all| grep nginx
+
+   kubectl get all| grep nginx
+
+
+
+![image](https://github.com/zizitizi/nginx-ingress/assets/123273835/b439a1ec-59f6-4fcb-8a4a-91e82b6d9be3)
 
  
 
-kubectl get pods --all-namespaces
+   kubectl get pods --all-namespaces
+
+
+
+![image](https://github.com/zizitizi/nginx-ingress/assets/123273835/4c4233aa-f31b-4c90-b859-4a0c2318b96e)
 
  
 
-kubectl get services infra-nginx-ingress-trial-controller
+   kubectl get services infra-nginx-ingress-trial-controller
 
  
 
