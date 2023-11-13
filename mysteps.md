@@ -1,5 +1,13 @@
 
 
+
+Date:11/13/2023
+Received assessment email at: 10:12 
+Duration:240 min
+
+
+
+
 Step 1 - Install NGINX Ingress Controller using Helm
 
 Fist verify your cluster is ready:
@@ -32,7 +40,7 @@ kubectl get services infra-nginx-ingress-trial-controller
 
  
 
-Step 3 - Exposing Services using NGINX Ingress Controller
+Step 3 - Exposing Services using NGINX Ingress Controller with special annotation
 
 Sample of a host-based service mapping through an ingress controller using the type “Ingress” with special annotation nginx-trial:
 apiVersion: networking.k8s.io/v1
