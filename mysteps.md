@@ -63,34 +63,43 @@ to verify it:
 
    kubectl get services infra-nginx-ingress-trial-controller
 
+
+
+![image](https://github.com/zizitizi/nginx-ingress/assets/123273835/b31079d5-50e1-4035-99f5-722c7b8ffbc7)
+
+
  
 
-Step 3 - Exposing Services using NGINX Ingress Controller with special annotation
+# Step 3 - Exposing Services using NGINX Ingress Controller with special annotation
+
 
 Sample of a host-based service mapping through an ingress controller using the type “Ingress” with special annotation nginx-trial:
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: hello-world
-  annotations:
-        nginx-trial/default: "on"
-spec:
-  ingressClassName: nginx
-  rules:
-  - host: zizi
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: hello-world
-            port:
-              number: 80
+
+
+         apiVersion: networking.k8s.io/v1
+         kind: Ingress
+         metadata:
+           name: hello-world
+           annotations:
+                 nginx-trial/default: "on"
+         spec:
+           ingressClassName: nginx
+           rules:
+           - host: zizi
+             http:
+               paths:
+               - pathType: Prefix
+                 path: "/"
+                 backend:
+                   service:
+                     name: hello-world
+                     port:
+                       number: 80
 
 
 
  
+![image](https://github.com/zizitizi/nginx-ingress/assets/123273835/5fe301b0-4532-4166-a6fb-8ec1c138dd7c)
 
 
 
